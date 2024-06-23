@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.blurred {
+  filter: blur(3px);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: skyblue;
+  color: darkblue;
+  .header {
+    display: flex;
+    align-items: center;
+    .header_left {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      justify-content: center;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border-right: 2px solid darkblue;
+      .weather_icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+      .large {
+        width: 80px;
+        height: 80px;
+      }
+      .header_current_temp {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    }
+    .header_right {
+      display: grid;
+      width: 50%;
+      justify-content: space-around;
+      gap: 0.5rem;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, auto);
+      .info_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .label {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 0.6rem;
+          color: darkcyan;
+        }
+        .value_sub_info {
+          font-weight: lighter;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .day_sec {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 75px);
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem;
+    .day_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid darkblue;
+      border-radius: 0.25rem;
+      padding: 0 0.25rem;
+      .day_card_day {
+        font-size: 0.75rem;
+        color: darkcyan;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+.hour_sec {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  .hour_row {
+    background-color: lightblue;
+    td {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  .hour_row:nth-child(2n) {
+    background-color: lightcyan;
+  }
+}
