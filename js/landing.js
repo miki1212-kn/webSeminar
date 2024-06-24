@@ -33,9 +33,9 @@ function showTime() {
 }
 
 // Add zeros
-function addZero(n) {
-  return (parseInt(n, 10) < 10 ? "0" : "") + n;
-}
+// function addZero(n) {
+//   return (parseInt(n, 10) < 10 ? "0" : "") + n;
+// }
 
 // Background and Greeting
 function setBgGreet() {
