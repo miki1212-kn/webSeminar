@@ -46,7 +46,7 @@ function setBgGreet() {
   if (hour < 12) {
     // Morning
     document.body.style.backgroundImage = "url('../img/morning.jpeg')";
-    greeting.textContent = "Good Morning";
+    greeting.textContent = "Good Evening";
   } else if (hour < 18) {
     // Afternoon
     document.body.style.backgroundImage = "url('../img/afternoon.jpeg')";
@@ -54,7 +54,7 @@ function setBgGreet() {
   } else {
     // Evening
     document.body.style.backgroundImage = "url('../img/evening.jpeg')";
-    greeting.textContent = "Good Evening";
+    greeting.textContent = "Good Morning";
     document.body.style.color = "white";
   }
 }
