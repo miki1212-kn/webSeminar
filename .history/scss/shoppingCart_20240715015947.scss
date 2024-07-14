@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: auto;
+  transition: 0.5s;
+  width: 900px;
+  max-width: 90vw;
+}

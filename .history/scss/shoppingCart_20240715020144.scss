@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: auto;
+  transition: 0.5s;
+  width: 900px;
+  max-width: 90vw;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px;
+    cursor: pointer;
+    height: 80px;
+    .shoppingBasket {
+      position: relative;
+      .quantity {
+        background-color: red;
+        color: #fff;
+      }
+    }
+  }
+}
