@@ -202,6 +202,7 @@ const loadProducts = async (apiURL) => {
   }
 };
 
+//* ヘルパー関数
 const calculateTotal = () => {
   return cart
     .map(({ id, qty }) => {
@@ -213,6 +214,7 @@ const calculateTotal = () => {
     }, 0);
 };
 
+// 数値フォーマット関数
 Number.prototype.format = function () {
   return this.toLocaleString("en-US", {
     style: "currency",
@@ -220,4 +222,5 @@ Number.prototype.format = function () {
   });
 };
 
+//* 初期化
 setupListeners(); // リスナーをセットアップ

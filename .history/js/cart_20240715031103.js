@@ -198,10 +198,11 @@ const loadProducts = async (apiURL) => {
     products = await response.json(); // 商品データを取得
     console.log(products);
   } catch (error) {
-    console.error("fetch error:", error);
+    console.error("fetch  error:", error);
   }
 };
 
+//* ヘルパー関数
 const calculateTotal = () => {
   return cart
     .map(({ id, qty }) => {
@@ -213,6 +214,7 @@ const calculateTotal = () => {
     }, 0);
 };
 
+// 数値フォーマット関数
 Number.prototype.format = function () {
   return this.toLocaleString("en-US", {
     style: "currency",
@@ -220,4 +222,5 @@ Number.prototype.format = function () {
   });
 };
 
+//* 初期化
 setupListeners(); // リスナーをセットアップ

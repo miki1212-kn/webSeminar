@@ -106,8 +106,8 @@ const updateCart = (e) => {
     btn === "incr" && increaseQty(id);
     btn === "decr" && decreaseQty(id);
 
-    saveCart();
-    renderCart();
+    saveCart(); // カートを保存
+    renderCart(); // カートを再描画
   }
 };
 
@@ -116,17 +116,18 @@ const saveCart = () => {
 };
 
 const loadCart = () => {
-  cart = JSON.parse(localStorage.getItem("online-store")) || [];
+  cart = JSON.parse(localStorage.getItem("online-store")) || []; // カートをロード
 };
 
+//* 描画関数
 const renderCart = () => {
-  // カートの数を表示
+  // カートの数量を表示
   const cartQty = cart.reduce((sum, item) => {
     return sum + item.qty;
   }, 0);
 
-  selectors.cartQty.textContent = cartQty; // カートの数を更新
-  selectors.cartQty.classList.toggle("visible", cartQty); // 状態を更新
+  selectors.cartQty.textContent = cartQty; // カートの数量を更新
+  selectors.cartQty.classList.toggle("visible", cartQty); // 表示状態を更新
 
   // カートの合計を表示
   selectors.cartTotal.textContent = calculateTotal().format();
@@ -169,12 +170,12 @@ const renderCart = () => {
 const renderProducts = () => {
   selectors.products.innerHTML = products
     .map((product) => {
-      const { id, title, image, price } = product;
+      const { id, title, image, price } = product; // 商品情報を分解
 
       // カート内に商品があるか確認
       const inCart = cart.find((x) => x.id === id);
       const disabled = inCart ? "disabled" : ""; // すでにカートにある場合は無効
-      const text = inCart ? "カートに入っています" : "カートに入れる";
+      const text = inCart ? "カートに入っています" : "カートに入れる"; // ボタンのテキスト
 
       return `
     <div class="product">
@@ -198,10 +199,11 @@ const loadProducts = async (apiURL) => {
     products = await response.json(); // 商品データを取得
     console.log(products);
   } catch (error) {
-    console.error("fetch error:", error);
+    console.error("フェッチエラー:", error);
   }
 };
 
+//* ヘルパー関数
 const calculateTotal = () => {
   return cart
     .map(({ id, qty }) => {
@@ -213,6 +215,7 @@ const calculateTotal = () => {
     }, 0);
 };
 
+// 数値フォーマット関数
 Number.prototype.format = function () {
   return this.toLocaleString("en-US", {
     style: "currency",
@@ -220,4 +223,5 @@ Number.prototype.format = function () {
   });
 };
 
+//* 初期化
 setupListeners(); // リスナーをセットアップ
