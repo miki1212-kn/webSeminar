@@ -82,8 +82,9 @@ const addToCart = (button) => {
 };
 
 const removeFromCart = (id) => {
-  cart = cart.filter((item) => item.id !== id); // カートから商品を削除
-  if (cart.length === 0) setTimeout(hideCart, 500); // カートが空なら非表示
+  cart = cart.filter((item) => item.id !== id);
+  if (cart.length === 0) setTimeout(hideCart, 500);
+  renderProducts();
 };
 
 const increaseQty = (id) => {
