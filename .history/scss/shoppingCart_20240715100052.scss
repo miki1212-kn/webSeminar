@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+
 :root {
   --color1: #ab4e68;
   --color2: #b07156;
@@ -39,8 +40,8 @@ button {
 }
 
 img {
-  width: 100%;
-  height: 50%;
+  width: 100px;
+  height: 30%;
   display: block;
 }
 
@@ -109,8 +110,7 @@ nav > .container {
 
 .product img {
   height: 250px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .product:hover img {
@@ -149,11 +149,11 @@ nav > .container {
 .product button::before {
   font-family: "bootstrap-icons";
   font-size: 1.5rem;
-  content: "\f23f";
+  content: "\F23F";
 }
 
 .product button:disabled::before {
-  content: "\f23a";
+  content: "\F23A";
 }
 
 .product button:hover {
@@ -166,6 +166,7 @@ nav > .container {
 }
 
 /* cart */
+
 .cart-overlay {
   position: fixed;
   inset: 0;
@@ -242,8 +243,7 @@ nav > .container {
 .cart-item img {
   width: 100px;
   height: 100px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .cart-item-detail {
@@ -296,7 +296,7 @@ nav > .container {
 }
 
 .cart-footer div {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -329,4 +329,4 @@ nav > .container {
 
 .checkout:hover {
   background: var(--color2);
-}/*# sourceMappingURL=shoppingCart.css.map */
+}
